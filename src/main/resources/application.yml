@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url:jdbc:mariadb://springboottoy.c2cczg1ppooa.ap-northeast-2.rds.amazonaws.com:3306/springbootToy
+  username: admin
+  password: song8420
+  driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
