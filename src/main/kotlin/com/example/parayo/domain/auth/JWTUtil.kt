@@ -2,6 +2,7 @@ package com.example.parayo.domain.auth
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import com.auth0.jwt.interfaces.DecodedJWT
 import java.util.*
 
 object JWTUtil {
@@ -35,4 +36,19 @@ object JWTUtil {
     object JWTClaims {
         const val EMAIL = "email"
     }
+
+    fun verify(token:String): DecodedJWT =
+        JWT.require(algorithm)
+            .withIssuer(ISSUER)
+            .build()
+            .verify(token)
+
+    fun verifyRefresh(token:String): DecodedJWT =
+        JWT.require(refreshAlgorithm)
+            .withIssuer(ISSUER)
+            .build()
+            .verify(token)
+
+    fun extractEmail(jwt: DecodedJWT): String =
+        jwt.getClaim(JWTClaims.EMAIL).asString()
 }
