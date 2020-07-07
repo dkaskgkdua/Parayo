@@ -4,6 +4,13 @@ spring:
   username: admin
   password: song8420
   driver-class-name: org.mariadb.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 20MB
+
+  parayo:
+    file-upload:
+      default-dir: /parayo
 
   jpa:
     hibernate:
