@@ -1,0 +1,41 @@
+# request
+
+POST http://localhost:8080/api/v1/products
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBdXRoIiwiaXNzIjoiUGFyYXlvIiwiZXhwIjoxNTk0NjQ1NTgzLCJpYXQiOjE1OTQ2MzgzODMsImVtYWlsIjoidGVzdEB0ZXN0Lm5ldCJ9.w74MONLD-IwY6CBf45m-ShT-vmD5aDhI9VZ_tgXxWGo
+
+{
+"name": "테스트 상품",
+"description": "테스트 상품 설명",
+"price" : 100,
+"categoryId" : 1,
+"imageIds": [1, 2, 3]
+}
+
+#response
+
+HTTP/1.1 200
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 13 Jul 2020 11:11:00 GMT
+
+{
+"success": true,
+"data": {
+"id": 1,
+"createdAt": "2020-07-13T11:11:00.168+0000",
+"updatedAt": "2020-07-13T11:11:00.168+0000",
+"name": "테스트 상품",
+"description": "테스트 상품 설명",
+"price": 100,
+"categoryId": 1,
+"status": "SELLABLE",
+"images": [],
+"userId": 1
+},
+"message": null
+}
+
+Response code: 200; Time: 101ms; Content length: 245 bytes
